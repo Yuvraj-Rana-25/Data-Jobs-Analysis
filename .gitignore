@@ -1,8 +1,3 @@
 ## Test file for modules
 test.ipynb
 
-## Files for testing
-Advanced/job_postings_q1.csv
-Advanced/job_postings_q1.xlsx
-Advanced/jobs_data.parquet
-Advanced/jobs_data.pkl
