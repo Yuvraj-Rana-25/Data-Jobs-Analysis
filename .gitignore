@@ -2,7 +2,7 @@
 test.ipynb
 
 ## Files for testing
-job_postings_q1.csv
-job_postings_q1.xlsx
-jobs_data.parquet
-jobs_data.pkl
+Advanced/job_postings_q1.csv
+Advanced/job_postings_q1.xlsx
+Advanced/jobs_data.parquet
+Advanced/jobs_data.pkl
