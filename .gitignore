@@ -1,1 +1,8 @@
+## Test file for modules
 test.ipynb
+
+## Files for testing
+job_postings_q1.csv
+job_postings_q1.xlsx
+jobs_data.parquet
+jobs_data.pkl
