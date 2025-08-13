@@ -65,7 +65,7 @@ for i , job in enumerate(job_titles):
         palette='dark:b_r')
 ```
 #### Results
-![alt text](image.png)
+![alt text](Images\Skill_demand.png)
 *Bar graph visualizing the salary for the top 3 data roles and their top 5 skills associated with each.*
 
 ### Insights
@@ -96,10 +96,82 @@ for i in range(5):
 plt.show()
 ```
 #### Results
-![alt text](image.png)
+![alt text](Images\Skill_Trends.png)
 *Line Chart visualizing the trending top skills for data analysts in the India in 2023.*
 ### Insights
 - SQL remains the most consistently demanded skill throughout the year, although it shows a gradual decrease in demand.
 - Excel experienced a significant decrease in demand starting around October, falling below python.
 - Python show relatively stable demand throughout the year with some fluctuations but remain essential skills for data analysts.     
 - Power BI and Tableau, while less demanded compared to the others, show significant upward trends towards the year's end.
+
+## 3. How well do jobs and skills pay for Data Analysts?
+To identify the highest-paying roles and skills, I only got jobs in the India and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most.
+
+View my notebook with detailed steps here: [4_Salary_Analysis](Project\4_Salary_Analysis.ipynb)
+### Visualize Data 
+```python
+sns.boxplot(data=df_ind_top, 
+            x='salary_year_avg', 
+            y='job_title_short', 
+            order= top_titles, 
+            medianprops={'color':'black', 'linewidth':1})
+```
+#### Results
+![alt_text](Images\Salary_box_plot.png)
+*Box plot visualizing the salary distributions for the top 6 data job titles.*
+### Insights
+- Machine Learning Engineers have the widest salary range, indicating significant variation depending on factors like experience, company size, and project complexity.
+- Data Analysts have the narrowest range, showing more predictable pay but less room for very high earnings.
+- Data Engineer and Data Analyst categories both show clear high-earning outliers, suggesting that exceptional performers (or certain niche industries) can push well beyond typical salaries.
+- The absence of extreme outliers in Machine Learning Engineer and Data Scientist salaries may indicate a more consistent top-end cap in those roles.
+## Highest Paid & Most Demanded Skills for Data Analysts
+Next, I narrowed my analysis and focused only on data analyst roles. I looked at the highest-paid skills and the most in-demand skills. I used two bar charts to showcase these.
+### Visualize Data
+```python
+fig, ax = plt.subplots(2,1)
+sns.set_theme(style = 'ticks')
+sns.barplot(data = df_DA_Tpay, x='median', y=df_DA_Tpay.index, ax=ax[0], hue = 'median',legend=False, palette='dark:b_r')
+plt.show()
+```
+#### Results
+![alt_text](Images\Salary_analysis_Ind.png)
+### Insights
+- The top graph shows specialized technical skills like pyspark, databricks, and Gitlab are associated with higher salaries, some reaching up to $170K, suggesting that advanced technical proficiency can increase earning potential.
+
+- The bottom graph highlights that foundational skills like Excel, Python, and SQL are the most in-demand, even though they may not offer the highest salaries. This demonstrates the importance of these core skills for employability in data analysis roles.
+
+- There's a clear distinction between the skills that are highest paid and those that are most in-demand. Data analysts aiming to maximize their career potential should consider developing a diverse skill set that includes both high-paying specialized skills and widely demanded foundational skills.
+
+## 4. What are the most optimal skills to learn for Data Analysts?
+To identify the most optimal skills to learn ( the ones that are the highest paid and highest in demand) I calculated the percent of skill demand and the median salary of these skills. To easily identify which are the most optimal skills to learn.
+
+View my notebook with detailed steps here: [Optimal_skills](Project\5_Most_optimal_skill.ipynb)
+### Visualize Data
+```python
+df_DA_high_dem.plot(kind='scatter',x='skill_percent', y='median_salary')
+texts = []
+for i, txt in enumerate(df_DA_high_dem.index):
+    texts.append(
+        plt.annotate(txt, (df_DA_high_dem['skill_percent'].iloc[i], df_DA_high_dem['median_salary'].iloc[i]))
+        )
+```
+#### Results
+![](Images\Optimal_skill_by(tech).png)
+
+### Insights
+- The scatter plot shows that most of the programming skills (colored blue) tend to cluster at higher salary levels compared to other categories, indicating that programming expertise might offer greater salary benefits within the data analytics field.
+- Analyst tools (colored orange), including Tableau and Power BI, are prevalent in job postings and offer competitive salaries, showing that visualization and data analysis software are crucial for current data roles. This category not only has good salaries but is also versatile across different types of data tasks.
+## What I Learned
+Throughout this project, I deepened my understanding of the data analyst job market and enhanced my technical skills in Python, especially in data manipulation and visualization. Here are a few specific things I learned:
+
+- **Advanced Python Usage :** Utilizing libraries such as Pandas for data manipulation, Seaborn and Matplotlib for data visualization, and other libraries helped me perform complex data analysis tasks more efficiently.
+- **Data Cleaning Importance :** I learned that thorough data cleaning and preparation are crucial before any analysis can be conducted, ensuring the accuracy of insights derived from the data.
+- **Strategic Skill Analysis :** The project emphasized the importance of aligning one's skills with market demand. Understanding the relationship between skill demand, salary, and job availability allows for more strategic career planning in the tech industry.
+## Challenges I Faced
+This project was not without its challenges, but it provided good learning opportunities:
+
+- **Data Inconsistencies :** Handling missing or inconsistent data entries requires careful consideration and thorough data-cleaning techniques to ensure the integrity of the analysis.
+- **Complex Data Visualization :** Designing effective visual representations of complex datasets was challenging but critical for conveying insights clearly and compellingly.
+- **Balancing Breadth and Depth :** Deciding how deeply to dive into each analysis while maintaining a broad overview of the data landscape required constant balancing to ensure comprehensive coverage without getting lost in details.
+# Conclusion
+This exploration into the data analyst job market has been incredibly informative, highlighting the critical skills and trends that shape this evolving field. The insights I got enhance my understanding and provide actionable guidance for anyone looking to advance their career in data analytics. As the market continues to change, ongoing analysis will be essential to stay ahead in data analytics. This project is a good foundation for future explorations and underscores the importance of continuous learning and adaptation in the data field.
