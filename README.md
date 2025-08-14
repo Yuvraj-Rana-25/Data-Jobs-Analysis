@@ -66,7 +66,7 @@ for i , job in enumerate(job_titles):
         palette='dark:b_r')
 ```
 #### Results
-![alt text](Pyhton_DA_project\Images\Skill_demand.png)
+![alt text](Images/Skill_demand.png)
 *Bar graph visualizing the salary for the top 3 data roles and their top 5 skills associated with each.*
 
 ### Insights
@@ -77,7 +77,7 @@ for i , job in enumerate(job_titles):
 ## 2. How are in-demand skills trending for Data Analysts?
 To find how skills are trending in 2023 for Data Analysts, I filtered data analyst positions and grouped the skills by the month of the job postings. This got me the top 5 skills of data analysts by month, showing how popular skills were throughout 2023.
 
-Visit my notebook for detailed analysis: [3_Skills_Trend.ipynb](Project\3_Skills_Trend.ipynb)
+Visit my notebook for detailed analysis: [3_Skills_Trend.ipynb](Project/3_Skills_Trend.ipynb)
 
 ### Visualize Data
 ```python
@@ -97,7 +97,7 @@ for i in range(5):
 plt.show()
 ```
 #### Results
-![alt text](Images\Skill_Trends.png)
+![alt text](Images/Skill_Trends.png)
 *Line Chart visualizing the trending top skills for data analysts in the India in 2023.*
 ### Insights
 - SQL remains the most consistently demanded skill throughout the year, although it shows a gradual decrease in demand.
@@ -108,7 +108,7 @@ plt.show()
 ## 3. How well do jobs and skills pay for Data Analysts?
 To identify the highest-paying roles and skills, I only got jobs in the India and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most.
 
-View my notebook with detailed steps here: [4_Salary_Analysis.ipynb](Project\4_Salary_Analysis.ipynb)
+View my notebook with detailed steps here: [4_Salary_Analysis.ipynb](Project/4_Salary_Analysis.ipynb)
 ### Visualize Data 
 ```python
 sns.boxplot(data=df_ind_top, 
@@ -118,7 +118,7 @@ sns.boxplot(data=df_ind_top,
             medianprops={'color':'black', 'linewidth':1})
 ```
 #### Results
-![alt_text](Images\Salary_box_plot.png)
+![alt_text](Images/Salary_box_plot.png)
 *Box plot visualizing the salary distributions for the top 6 data job titles.*
 ### Insights
 - Machine Learning Engineers have the widest salary range, indicating significant variation depending on factors like experience, company size, and project complexity.
@@ -135,7 +135,7 @@ sns.barplot(data = df_DA_Tpay, x='median', y=df_DA_Tpay.index, ax=ax[0], hue = '
 plt.show()
 ```
 #### Results
-![alt_text](Images\Salary_analysis_Ind.png)
+![alt_text](Images/Salary_analysis_Ind.png)
 ### Insights
 - The top graph shows specialized technical skills like pyspark, databricks, and Gitlab are associated with higher salaries, some reaching up to $170K, suggesting that advanced technical proficiency can increase earning potential.
 
@@ -146,7 +146,7 @@ plt.show()
 ## 4. What are the most optimal skills to learn for Data Analysts?
 To identify the most optimal skills to learn ( the ones that are the highest paid and highest in demand) I calculated the percent of skill demand and the median salary of these skills. To easily identify which are the most optimal skills to learn.
 
-View my notebook with detailed steps here: [5_Most_optimal_skill.ipynb](Project\5_Most_optimal_skill.ipynb)
+View my notebook with detailed steps here: [5_Most_optimal_skill.ipynb](Project/5_Most_optimal_skill.ipynb)
 ### Visualize Data
 ```python
 df_DA_high_dem.plot(kind='scatter',x='skill_percent', y='median_salary')
@@ -157,7 +157,7 @@ for i, txt in enumerate(df_DA_high_dem.index):
         )
 ```
 #### Results
-![](Images\Optimal_skill_by(tech).png)
+![alt_text](Images/Optimal_skill_by(tech).png)
 
 ### Insights
 - The scatter plot shows that most of the programming skills (colored blue) tend to cluster at higher salary levels compared to other categories, indicating that programming expertise might offer greater salary benefits within the data analytics field.
