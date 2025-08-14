@@ -54,7 +54,7 @@ Each Jupyter notebook for this project aimed at investigating specific aspects o
 ## 1. What are the most demanded skills for the top 3 most popular data roles in India ?
 To find the most demanded skills for the top 3 most popular data roles. I filtered out those positions by which ones were the most popular, and got the top 5 skills for these top 3 roles. This query highlights the most popular job titles and their top skills, showing which skills I should pay attention to depending on the role I'm targeting.
 
-Visit my jupyter notebook for details [2_Skill_demand.ipynb](Project\2_Skill_demand.ipynb)
+Visit my jupyter notebook for details [2_Skill_demand.ipynb](Project/2_Skill_demand.ipynb)
 
 ### Visualize Data
 ```python
