@@ -22,10 +22,11 @@ For my deep dive into the data analyst job market, I harnessed the power of seve
 - Git & GitHub: Essential for version control and sharing my Python code and analysis, ensuring collaboration and project tracking.
 ## Data Preparation and Cleanup
 This section outlines the steps taken to prepare the data for analysis, ensuring accuracy and usability.
-```python
-### Import & Clean Up Data
 I start by importing necessary libraries and loading the dataset, followed by initial data cleaning tasks to ensure data quality.
 
+### Import & Clean Up Data
+
+```python
 # Importing Libraries
 import ast
 import pandas as pd
@@ -53,7 +54,7 @@ Each Jupyter notebook for this project aimed at investigating specific aspects o
 ## 1. What are the most demanded skills for the top 3 most popular data roles in India ?
 To find the most demanded skills for the top 3 most popular data roles. I filtered out those positions by which ones were the most popular, and got the top 5 skills for these top 3 roles. This query highlights the most popular job titles and their top skills, showing which skills I should pay attention to depending on the role I'm targeting.
 
-Visit my jupyter notebook for details [2_Skill_demand](Project\2_Skill_demand.ipynb)
+Visit my jupyter notebook for details [2_Skill_demand.ipynb](Project\2_Skill_demand.ipynb)
 
 ### Visualize Data
 ```python
@@ -65,7 +66,7 @@ for i , job in enumerate(job_titles):
         palette='dark:b_r')
 ```
 #### Results
-![alt text](Images\Skill_demand.png)
+![alt text](Pyhton_DA_project\Images\Skill_demand.png)
 *Bar graph visualizing the salary for the top 3 data roles and their top 5 skills associated with each.*
 
 ### Insights
@@ -76,7 +77,7 @@ for i , job in enumerate(job_titles):
 ## 2. How are in-demand skills trending for Data Analysts?
 To find how skills are trending in 2023 for Data Analysts, I filtered data analyst positions and grouped the skills by the month of the job postings. This got me the top 5 skills of data analysts by month, showing how popular skills were throughout 2023.
 
-Visit my notebook for detailed analysis: [3_Skills_Trend](Project\3_Skills_Trend.ipynb)
+Visit my notebook for detailed analysis: [3_Skills_Trend.ipynb](Project\3_Skills_Trend.ipynb)
 
 ### Visualize Data
 ```python
@@ -107,7 +108,7 @@ plt.show()
 ## 3. How well do jobs and skills pay for Data Analysts?
 To identify the highest-paying roles and skills, I only got jobs in the India and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most.
 
-View my notebook with detailed steps here: [4_Salary_Analysis](Project\4_Salary_Analysis.ipynb)
+View my notebook with detailed steps here: [4_Salary_Analysis.ipynb](Project\4_Salary_Analysis.ipynb)
 ### Visualize Data 
 ```python
 sns.boxplot(data=df_ind_top, 
@@ -145,7 +146,7 @@ plt.show()
 ## 4. What are the most optimal skills to learn for Data Analysts?
 To identify the most optimal skills to learn ( the ones that are the highest paid and highest in demand) I calculated the percent of skill demand and the median salary of these skills. To easily identify which are the most optimal skills to learn.
 
-View my notebook with detailed steps here: [Optimal_skills](Project\5_Most_optimal_skill.ipynb)
+View my notebook with detailed steps here: [5_Most_optimal_skill.ipynb](Project\5_Most_optimal_skill.ipynb)
 ### Visualize Data
 ```python
 df_DA_high_dem.plot(kind='scatter',x='skill_percent', y='median_salary')
