@@ -67,6 +67,7 @@ for i , job in enumerate(job_titles):
 ```
 #### Results
 ![alt text](Images/Skill_demand.png)
+
 *Bar graph visualizing the salary for the top 3 data roles and their top 5 skills associated with each.*
 
 ### Insights
@@ -98,6 +99,7 @@ plt.show()
 ```
 #### Results
 ![alt text](Images/Skill_Trends.png)
+
 *Line Chart visualizing the trending top skills for data analysts in the India in 2023.*
 ### Insights
 - SQL remains the most consistently demanded skill throughout the year, although it shows a gradual decrease in demand.
@@ -119,6 +121,7 @@ sns.boxplot(data=df_ind_top,
 ```
 #### Results
 ![alt_text](Images/Salary_box_plot.png)
+
 *Box plot visualizing the salary distributions for the top 6 data job titles.*
 ### Insights
 - Machine Learning Engineers have the widest salary range, indicating significant variation depending on factors like experience, company size, and project complexity.
